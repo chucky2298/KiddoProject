@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Kiddo{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link href="{{ asset('front/images/favicon.png') }}" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+
+        <!-- Google fonts -->
+        <link href="{{ asset('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i') }}" rel="stylesheet">
+
+        <!-- Bootstrap -->
+        <link href="{{ asset('front/css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- Font-awesome -->
+        <link href="{{ asset('front/css/font-awesome.min.css') }}" rel="stylesheet">
+
+        <!-- Flaticon -->
+        <link href="{{ asset('front/flaticon/flaticon.css') }}" rel="stylesheet">
+
+        <!-- lightcase -->
+        <link href="{{ asset('front/css/lightcase.css') }}" rel="stylesheet">
+
+        <!-- Swiper -->
+        <link href="{{ asset('front/css/swiper.min.css') }}" rel="stylesheet">
+
+        <!-- quick-view -->
+        <link href="{{ asset('front/css/quick-view.css') }}" rel="stylesheet">
+
+        <!-- nstSlider -->
+        <link href="{{ asset('front/css/jquery.nstSlider.css') }}" rel="stylesheet">
+
+        <!-- flexslider -->
+        <link href="{{ asset('front/css/flexslider.css') }}" rel="stylesheet">
+
+        <!-- Style -->
+        <link href="{{ asset('front/css/rtl.css') }}" rel="stylesheet">
+
+        <!-- Style -->
+        <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
+
+        <!-- Responsive -->
+        <link href="{{ asset('front/css/responsive.css') }}" rel="stylesheet">
+    </head>
+    <body>
+    {% block header %}
+        <header class="header-three">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row ht-area">
+                        <ul class="left">
+                            <li><span><i aria-hidden="true"></i></span> Solution by LightBringers</li>
+                        </ul>
+                        <ul class="right">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-menu">
+                <div class="container">
+                    <div class="row no-gutters">
+                        <nav class="main-menu-area w-100">
+                            <div class="logo-area">
+                                <a class="" href="index.html"><img src="front/images/logo.png" alt="logo" class="img-responsive"></a>
+                                <button type="button" class="navbar-toggle collapsed d-md-none" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <div class="menu-area">
+
+
+                                <ul class="menu">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acceuil </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">A propos </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nos jardins </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="event.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Evenements </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reclamations <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="gallery.html">Passer reclamation</a></li>
+                                            <li><a href="gallery-2.html">Consulter reclamations</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    {% block footer %}
+        <footer>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-xs-12">
+                            <div class="footer-item">
+                                <div class="title"><img src="{{ asset('front/images/logo.png') }}" alt="logo" class="img-responsive"></div>
+                                <div class="footer-about">
+                                    <p>Distily enable team driven services through extensive is a relatonships platforms with interactive content. Enthusiastically scale effective.</p>
+                                    <ul>
+                                        <li><span><i class="fa fa-home" aria-hidden="true"></i></span> New Chokoya Road, USA.</li>
+                                        <li><span><i class="fa fa-phone" aria-hidden="true"></i></span> +8801 923 970 212, 0125897</li>
+                                        <li><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> Contact@admin LabArtisan</li>
+                                        <li><span><i class="fa fa-globe" aria-hidden="true"></i></span> Email@admin LabArtisan</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- row -->
+                </div><!-- container -->
+            </div><!-- footer top -->
+
+        </footer>
+        <a class="page-scroll scroll-top" href="#scroll-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+        {% endblock %}
+        {% block javascripts %}
+            <!-- jquery -->
+            <script src="{{ asset('front/js/jquery-1.12.4.min.js') }}"></script>
+
+            <!-- Bootstrap -->
+            <script src="{{ asset('front/js/bootstrap.min.js') }}"></script>
+
+            <!-- Isotope -->
+            <script src="{{ asset('front/js/isotope.min.js') }}"></script>
+
+            <!-- lightcase -->
+            <script src="{{ asset('front/js/lightcase.js') }}"></script>
+
+            <!-- counterup -->
+            <script src="{{ asset('../../../cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js') }}"></script>
+            <script src="{{ asset('front/js/jquery.counterup.min.js') }}"></script>
+
+            <!-- Swiper -->
+            <script src="{{ asset('front/js/swiper.jquery.min.js') }}"></script>
+
+            <!--progress-->
+            <script src="{{ asset('front/js/circle-progress.min.js') }}"></script>
+
+            <!--velocity-->
+            <script src="{{ asset('front/js/velocity.min.js') }}"></script>
+
+            <!--quick-view-->
+            <script src="{{ asset('front/js/quick-view.js') }}"></script>
+
+            <!--nstSlider-->
+            <script src="{{ asset('front/js/jquery.nstSlider.js') }}"></script>
+
+            <!--flexslider-->
+            <script src="{{ asset('front/js/flexslider-min.js') }}"></script>
+
+            <!--easing-->
+            <script src="{{ asset('front/js/jquery.easing.min.js') }}"></script>
+
+            <!-- custom -->
+            <script src="{{ asset('front/js/custom.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
