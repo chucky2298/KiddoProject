@@ -64,18 +64,15 @@
 
             <ul class="side-menu">
                 <li class="slide">
-                    <a class="side-menu__item"  data-toggle="slide" href="#"><i class="side-menu__icon fa fa-folder-open-o"></i><span class="side-menu__label">Jardins d'enfants</span><i class="angle fa fa-angle-right"></i></a>
-                    <ul class="slide-menu">
-                        <li><a class="slide-item"  href="tableclient.php"><span>Demandes</span></a></li>
-                        <li><a class="slide-item" href="tablecarte.php"><span>Liste jardins</span></a></li>
-                    </ul>
-                </li>
+                    <a class="slide-item"  href="{{ path('afficher_event') }}"><span>Gerer parents</span></a>                </li>
                 <li class="slide">
-                    <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-folder-open-o"></i><span class="side-menu__label">Parents</span></a>
-                </li>
+                    <a class="slide-item"  href="{{ path('afficher_event') }}"><span>Gerer enfants</span></a>                </li>
                 <li class="slide">
-                    <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-folder-open-o"></i><span class="side-menu__label">Reclamations</span></a>
-                </li>
+                    <a class="slide-item"  href="{{ path('afficher_event') }}"><span>Gerer evenements</span></a>                </li>
+                <li class="slide">
+                    <a class="slide-item"  href="{{ path('afficher_event') }}"><span>Gerer actualités</span></a>                </li>
+                <li class="slide">
+                    <a class="slide-item"  href="{{ path('afficher_event') }}"><span>Gerer questions</span></a>                </li>
             </ul>
         </aside>
         <!--aside closed-->

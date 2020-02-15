@@ -1,0 +1,42 @@
+{% extends 'back.html.twig' %}
+{% block content %}
+<script src="{{ asset('jquery-2.2.1.min.js')}}"></script>
+{#<script>
+    $(document).ready(function(){
+        $("a").hover(function(){ $("a").css("color","red")});
+    });
+</script>#}
+    <div class="section-body card-columns gallery">
+{% for events in events %}
+    {#<p>{{ events.nom }}</p>
+    <ul>
+        <li>quantite : {{ events.quantite }}</li>
+        <li>adresse : {{ events.adresse }}</li>
+    </ul>
+    <a href="{{ path('supprimer_event', { 'id':events.id }) }}"><b>supprimer</b></a>#}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card pricing-table-7">
+                <div class="card-header price-header">
+                    <h3 class="title">{{ events.nom }}</h3>
+                </div>
+                <div class="card-body price-body">
+                    <ul>
+                        <li><b>Adresse: </b>{{ events.adresse }}</li>
+                        <li><b>Quantite: </b>{{ events.quantite }}</li>
+                    </ul>
+                </div>
+
+                    <div class="card-footer price-footer">
+                        <a class="btn btn-warning mt-2 mb-2" type="submit" href="{{ path('supprimer_event', { 'id':events.id }) }}">Supprimer</a>
+                    </div>
+
+                    <div class="card-footer price-footer">
+                        <a class="btn btn-info mt-2 mb-2" type="submit" href="{{ path('modifier_event', { 'id':events.id }) }}">Modifier</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+    </div>
+{% endblock %}

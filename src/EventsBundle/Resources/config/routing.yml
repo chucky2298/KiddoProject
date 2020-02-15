@@ -1,0 +1,15 @@
+events_homepage:
+    path:     /
+    defaults: { _controller: EventsBundle:Default:index }
+ajouter_event:
+    path:     /ajouterEvent
+    defaults: { _controller: EventsBundle:Events:ajoutEvent }
+afficher_event:
+    path:     /afficherEvent
+    defaults: { _controller: EventsBundle:Events:afficherEvent }
+supprimer_event:
+    path:     /supprimerEvent/{id}
+    defaults: { _controller: EventsBundle:Events:supprimerEvent }
+modifier_event:
+    path:     /modifierEvent/{id}
+    defaults: { _controller: EventsBundle:Events:modifierEvent }
