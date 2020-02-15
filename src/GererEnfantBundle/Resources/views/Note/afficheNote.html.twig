@@ -1,0 +1,14 @@
+<h2> Liste des Notes </h2>
+{% for n in note  %}
+    <ul>
+        <li>Id : n.id </li>
+        <li>Matiere : n.matiere </li>
+        <li>Valeur : n.valeur </li>
+
+    </ul>
+    <a href="{{ path("updateNote",{'id' : note.id}) }}">
+        <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button> </a>
+
+    <a href="{{ path("deleteNote",{'id' : note.id}) }}">
+        <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button> </a>
+{%  endfor %}

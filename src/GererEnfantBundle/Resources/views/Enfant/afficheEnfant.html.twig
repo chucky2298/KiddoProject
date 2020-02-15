@@ -1,0 +1,22 @@
+{% extends 'back.html.twig' %}
+{% block content %}
+<h2> Liste des enfants </h2>
+{% for e in Enfant  %}
+<ul>
+    <li>Id : {{ e.id }} </li>
+    <li>Nom : {{ e.nom }} </li>
+    <li>Prenom : {{ e.prenom }} </li>
+    {# <li>Date de naissance : {{ e.dateNaissance }} </li> #}
+    {%  if e.Noteid !=null %}
+    <li>Note : {{ e.Noteid }} </li>
+{%  else %}
+    <li>Note : </li>
+    {% endif %}
+</ul>
+    <a href="{{ path("updateEnfant",{'id' : e.id}) }}">
+        <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button> </a>
+
+    <a href="{{ path("deleteEnfant",{'id' : e.id}) }}">
+        <button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button> </a>
+{%  endfor %}
+{% endblock %}

@@ -1,0 +1,35 @@
+gerer_enfant_homepage:
+    path:     /
+    defaults: { _controller: GererEnfantBundle:Default:index }
+
+ajoutEnfant:
+    path:     /ajoutEnfant
+    defaults: { _controller: GererEnfantBundle:Enfant:ajoutEnfant }
+
+afficheEnfant:
+    path:     /afficheEnfant
+    defaults: { _controller: GererEnfantBundle:Enfant:afficheEnfant }
+
+updateEnfant:
+    path:     /updateEnfant/{id}
+    defaults: { _controller: GererEnfantBundle:Enfant:updateEnfant }
+
+deleteEnfant:
+    path:     /deleteEnfant/{id}
+    defaults: { _controller: GererEnfantBundle:Enfant:deleteEnfant }
+
+ajoutNote:
+    path:     /ajoutNote
+    defaults: { _controller: GererEnfantBundle:Note:ajoutNote}
+
+afficheNote:
+    path:     /afficheNote
+    defaults: { _controller: GererEnfantBundle:Note:afficheNote }
+
+updateNote:
+    path:     /updateNote/{id}
+    defaults: { _controller: GererEnfantBundle:Note:updateNote }
+
+deleteNote:
+    path:     /deleteNote/{id}
+    defaults: { _controller: GererEnfantBundle:Note:deleteNote }
