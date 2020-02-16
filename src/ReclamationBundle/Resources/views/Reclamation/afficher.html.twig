@@ -1,0 +1,65 @@
+{% extends 'back.html.twig' %}
+{% block content %}
+<script src="{{ asset('jquery-2.2.1.min.js')}}"></script>
+{#<script>
+    $(document).ready(function(){
+        $("a").hover(function(){ $("a").css("color","red")});
+    });
+</script>#}
+{% for reclamation in reclamations %}
+
+<div class="section-body card-columns gallery">
+
+{% if reclamation.etat ==0 %}
+        <div class="rowrec2">
+      {% else %}
+          <div class="rowrec1">
+{% endif %}
+
+          <div class="col-md-12">
+            <div class="card pricing-table-7">
+                <div class="card-header price-header">
+                    <h3 class="title">{{ reclamation.titre }}</h3>
+                </div>
+                <div class="card-body price-body">
+                    <ul>
+                            <li><b>Contenu: </b>{{ reclamation.contenu }}</li>
+                    </ul>
+                </div>
+                <div class="card-footer price-footer">
+                    <a class="btn btn-warning mt-2 mb-2" type="submit" href="{{ path('reclamation_delete', { 'id':reclamation.id }) }}">Supprimer</a>
+                </div>
+                <div class="card-footer price-footer">
+                    <a class="btn btn-info mt-2 mb-2" type="submit" href="{{ path('reclamation_update', { 'id':reclamation.id }) }}">Modifier</a>
+                </div>
+
+        </div></div></div>
+
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+{#
+
+{% for reclamation in reclamations %}
+   <table border="1">
+       <form>
+        <tr><td>ID</td>
+        <td>Titre</td>
+        <td>Contenu</td>
+            <td></td>
+            <td></td>
+        </tr>
+    <tr><td>{{ reclamation.id  }}</td>
+        <td>{{ reclamation.titre }}</td>
+        <td>{{ reclamation.contenu }}</td>
+        <td> <a href="{{ path('reclamation_delete',{id:reclamation.id}) }}"> delete </a>  </td>
+        <td> <a href="{{ path('reclamation_update',{id:reclamation.id}) }}"> update </a> </td>
+
+    </tr>
+       </form>
+   </table>
+{% endfor %}
+#}

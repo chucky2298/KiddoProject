@@ -122,19 +122,32 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_events_homepage:
 
-        // ajouter_event
-        if ('/ajouterEvent' === $pathinfo) {
-            return array (  '_controller' => 'EventsBundle\\Controller\\EventsController::ajoutEventAction',  '_route' => 'ajouter_event',);
-        }
+        if (0 === strpos($pathinfo, '/a')) {
+            // ajouter_event
+            if ('/ajouterEvent' === $pathinfo) {
+                return array (  '_controller' => 'EventsBundle\\Controller\\EventsController::ajoutEventAction',  '_route' => 'ajouter_event',);
+            }
 
-        // afficher_event
-        if ('/afficherEvent' === $pathinfo) {
-            return array (  '_controller' => 'EventsBundle\\Controller\\EventsController::afficherEventAction',  '_route' => 'afficher_event',);
+            // afficher_event
+            if ('/afficherEvent' === $pathinfo) {
+                return array (  '_controller' => 'EventsBundle\\Controller\\EventsController::afficherEventAction',  '_route' => 'afficher_event',);
+            }
+
+            // reclamation_ajout
+            if ('/addReclamation' === $pathinfo) {
+                return array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::ajoutAction',  '_route' => 'reclamation_ajout',);
+            }
+
         }
 
         // supprimer_event
         if (0 === strpos($pathinfo, '/supprimerEvent') && preg_match('#^/supprimerEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimer_event']), array (  '_controller' => 'EventsBundle\\Controller\\EventsController::supprimerEventAction',));
+        }
+
+        // reclamation_affiche
+        if ('/showReclamation' === $pathinfo) {
+            return array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::afficherAction',  '_route' => 'reclamation_affiche',);
         }
 
         // modifier_event
@@ -165,6 +178,31 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // testpage
         if ('/test' === $pathinfo) {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::testAction',  '_route' => 'testpage',);
+        }
+
+        // reclamation_homepage
+        if ('' === $trimmedPathinfo) {
+            $ret = array (  '_controller' => 'ReclamationBundle\\Controller\\DefaultController::indexAction',  '_route' => 'reclamation_homepage',);
+            if ('/' === substr($pathinfo, -1)) {
+                // no-op
+            } elseif ('GET' !== $canonicalMethod) {
+                goto not_reclamation_homepage;
+            } else {
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'reclamation_homepage'));
+            }
+
+            return $ret;
+        }
+        not_reclamation_homepage:
+
+        // reclamation_delete
+        if (0 === strpos($pathinfo, '/deleteReclamation') && preg_match('#^/deleteReclamation/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'reclamation_delete']), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::deleteAction',));
+        }
+
+        // reclamation_update
+        if (0 === strpos($pathinfo, '/updateReclamation') && preg_match('#^/updateReclamation/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'reclamation_update']), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::updateAction',));
         }
 
         if ('/' === $pathinfo && !$allow) {

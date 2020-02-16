@@ -10,3 +10,6 @@ event:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+reclamation:
+    resource: "@ReclamationBundle/Resources/config/routing.yml"
+    prefix:   /
