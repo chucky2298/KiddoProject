@@ -4,6 +4,7 @@ namespace ReclamationBundle\Controller;
 
 use ReclamationBundle\Entity\Reclamation;
 use ReclamationBundle\Form\ReclamationType;
+use ReclamationBundle\ReclamationBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,16 +33,23 @@ class ReclamationController extends Controller
 
     public function updateAction(Request $request,$id)
     {
-        $em= $this->getDoctrine()->getManager();
-        $reclamation= $em->getRepository("ReclamationBundle:Reclamation")->find($id);
-        $form= $this->createForm(ReclamationType::class,$reclamation);
-        $form->handleRequest($request);
-        if($form->isSubmitted()){
-            $em->persist($reclamation);
-            $em->flush();
-            return $this->redirectToRoute("reclamation_affiche");
-        }
-        return $this->render("@Reclamation/Reclamation/update.html.twig",array('form'=>$form->createView()));    }
+        $entityManager = $this->getDoctrine()->getManager();
+        $product = $entityManager->getRepository(Reclamation::class)->find($id);
+
+        $product->setEtat(1);
+
+        $entityManager->flush();
+
+
+        return $this->redirectToRoute("reclamation_affiche");
+
+
+    }
+
+
+
+
+
 
     /**
      * @Route("/delete")

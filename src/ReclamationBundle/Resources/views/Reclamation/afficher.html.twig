@@ -6,9 +6,9 @@
         $("a").hover(function(){ $("a").css("color","red")});
     });
 </script>#}
-{% for reclamation in reclamations %}
 
 <div class="section-body card-columns gallery">
+    {% for reclamation in reclamations %}
 
 {% if reclamation.etat ==0 %}
         <div class="rowrec2">
@@ -29,11 +29,14 @@
                 <div class="card-footer price-footer">
                     <a class="btn btn-warning mt-2 mb-2" type="submit" href="{{ path('reclamation_delete', { 'id':reclamation.id }) }}">Supprimer</a>
                 </div>
-                <div class="card-footer price-footer">
-                    <a class="btn btn-info mt-2 mb-2" type="submit" href="{{ path('reclamation_update', { 'id':reclamation.id }) }}">Modifier</a>
-                </div>
+                {% if reclamation.etat ==0 %}
 
-        </div></div></div>
+                <div class="card-footer price-footer">
+                    <a class="btn btn-info mt-2 mb-2" type="submit" href="{{ path('reclamation_update', { 'id':reclamation.id }) }}">Marquer Traité</a>
+                </div>
+                {% endif %}
+
+            </div></div></div>
 
     {% endfor %}
 </div>

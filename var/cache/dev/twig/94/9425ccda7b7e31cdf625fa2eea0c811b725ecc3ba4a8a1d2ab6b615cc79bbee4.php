@@ -62,13 +62,15 @@ class __TwigTemplate_016fcf14a1326a9cf143334e1205996f4d8bf3d3ce98c7723189a92572c
         echo "\"></script>
 ";
         // line 9
+        echo "
+<div class=\"section-body card-columns gallery\">
+    ";
+        // line 11
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["reclamations"] ?? $this->getContext($context, "reclamations")));
         foreach ($context['_seq'] as $context["_key"] => $context["reclamation"]) {
-            // line 10
+            // line 12
             echo "
-<div class=\"section-body card-columns gallery\">
-
 ";
             // line 13
             if (($this->getAttribute($context["reclamation"], "etat", []) == 0)) {
@@ -104,21 +106,29 @@ class __TwigTemplate_016fcf14a1326a9cf143334e1205996f4d8bf3d3ce98c7723189a92572c
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("reclamation_delete", ["id" => $this->getAttribute($context["reclamation"], "id", [])]), "html", null, true);
             echo "\">Supprimer</a>
                 </div>
+                ";
+            // line 32
+            if (($this->getAttribute($context["reclamation"], "etat", []) == 0)) {
+                // line 33
+                echo "
                 <div class=\"card-footer price-footer\">
                     <a class=\"btn btn-info mt-2 mb-2\" type=\"submit\" href=\"";
-            // line 33
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("reclamation_update", ["id" => $this->getAttribute($context["reclamation"], "id", [])]), "html", null, true);
-            echo "\">Modifier</a>
+                // line 35
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("reclamation_update", ["id" => $this->getAttribute($context["reclamation"], "id", [])]), "html", null, true);
+                echo "\">Marquer Traité</a>
                 </div>
-
-        </div></div></div>
+                ";
+            }
+            // line 38
+            echo "
+            </div></div></div>
 
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reclamation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 42
         echo "</div>
 ";
         
@@ -141,7 +151,7 @@ class __TwigTemplate_016fcf14a1326a9cf143334e1205996f4d8bf3d3ce98c7723189a92572c
 
     public function getDebugInfo()
     {
-        return array (  122 => 39,  110 => 33,  104 => 30,  97 => 26,  90 => 22,  84 => 18,  80 => 16,  76 => 14,  74 => 13,  69 => 10,  65 => 9,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  132 => 42,  123 => 38,  117 => 35,  113 => 33,  111 => 32,  106 => 30,  99 => 26,  92 => 22,  86 => 18,  82 => 16,  78 => 14,  76 => 13,  73 => 12,  69 => 11,  65 => 9,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -162,9 +172,9 @@ class __TwigTemplate_016fcf14a1326a9cf143334e1205996f4d8bf3d3ce98c7723189a92572c
         \$(\"a\").hover(function(){ \$(\"a\").css(\"color\",\"red\")});
     });
 </script>#}
-{% for reclamation in reclamations %}
 
 <div class=\"section-body card-columns gallery\">
+    {% for reclamation in reclamations %}
 
 {% if reclamation.etat ==0 %}
         <div class=\"rowrec2\">
@@ -185,11 +195,14 @@ class __TwigTemplate_016fcf14a1326a9cf143334e1205996f4d8bf3d3ce98c7723189a92572c
                 <div class=\"card-footer price-footer\">
                     <a class=\"btn btn-warning mt-2 mb-2\" type=\"submit\" href=\"{{ path('reclamation_delete', { 'id':reclamation.id }) }}\">Supprimer</a>
                 </div>
-                <div class=\"card-footer price-footer\">
-                    <a class=\"btn btn-info mt-2 mb-2\" type=\"submit\" href=\"{{ path('reclamation_update', { 'id':reclamation.id }) }}\">Modifier</a>
-                </div>
+                {% if reclamation.etat ==0 %}
 
-        </div></div></div>
+                <div class=\"card-footer price-footer\">
+                    <a class=\"btn btn-info mt-2 mb-2\" type=\"submit\" href=\"{{ path('reclamation_update', { 'id':reclamation.id }) }}\">Marquer Traité</a>
+                </div>
+                {% endif %}
+
+            </div></div></div>
 
     {% endfor %}
 </div>
