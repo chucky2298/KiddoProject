@@ -186,5 +186,32 @@ class Evenements
     {
         return $this->date;
     }
+
+    /**
+     * @return \Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param \Category $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+    /**
+     * @var \Category
+     *
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="category", referencedColumnName="id")
+     * })
+     */
+    private $category;
+
+
 }
 

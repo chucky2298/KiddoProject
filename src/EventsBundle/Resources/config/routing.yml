@@ -13,3 +13,13 @@ supprimer_event:
 modifier_event:
     path:     /modifierEvent/{id}
     defaults: { _controller: EventsBundle:Events:modifierEvent }
+ajouter_category:
+    path:     /ajouterCategory
+    defaults: { _controller: EventsBundle:Category:ajouterCategory }
+afficher_category:
+    path:     /afficherCategory
+    defaults: { _controller: EventsBundle:Category:afficherCategory }
+supprimer_category:
+    path:     /supprimerCategory/{id}
+    defaults: { _controller: EventsBundle:Category:supprimerCategory }
+

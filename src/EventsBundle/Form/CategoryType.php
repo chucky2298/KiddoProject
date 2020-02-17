@@ -2,31 +2,25 @@
 
 namespace EventsBundle\Form;
 
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EvenementsType extends AbstractType
+class CategoryType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')
-            ->add('adresse')
-            ->add('quantite')
-            ->add('lienPhoto')
-            ->add('date')
-            ->add('category',EntityType::class,array('class'=>'EventsBundle:category','choice_label'=>'nom'));
+        $builder->add('nom');
     }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'EventsBundle\Entity\Evenements'
+            'data_class' => 'EventsBundle\Entity\Category'
         ));
     }
 
@@ -35,7 +29,7 @@ class EvenementsType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'eventsbundle_evenements';
+        return 'eventsbundle_category';
     }
 
 

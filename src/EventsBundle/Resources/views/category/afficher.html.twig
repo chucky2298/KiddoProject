@@ -1,0 +1,35 @@
+{% extends 'back.html.twig' %}
+{% block content %}
+    <script src="{{ asset('jquery-2.2.1.min.js')}}"></script>
+    {#<script>
+        $(document).ready(function(){
+            $("a").hover(function(){ $("a").css("color","red")});
+        });
+    </script>#}
+    <div class="section-body card-columns gallery">
+        {% for category in category %}
+            {#<p>{{ category.nom }}</p>
+            <ul>
+                <li>quantite : {{ category.quantite }}</li>
+                <li>adresse : {{ category.adresse }}</li>
+            </ul>
+            <a href="{{ path('supprimer_event', { 'id':category.id }) }}"><b>supprimer</b></a>#}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card pricing-table-7">
+                        <div class="card-header price-header">
+                            <h3 class="title">{{ category.nom }}</h3>
+                        </div>
+
+
+                        <div class="card-footer price-footer">
+                            <a class="btn btn-warning mt-2 mb-2" type="submit" href="{{ path('supprimer_category', { 'id':category.id }) }}">Supprimer</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
