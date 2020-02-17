@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new EventBundle\EventBundle(),
             new EventsBundle\EventsBundle(),
             new ReclamationBundle\ReclamationBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
 
         ];
 

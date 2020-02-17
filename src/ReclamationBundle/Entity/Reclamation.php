@@ -42,6 +42,28 @@ class Reclamation
     private $etat;
 
     /**
+     * @var int
+     * @ORM\Column(name="id_user", type="integer")
+     */
+    private $id_user;
+
+    /**
+     * @return int
+     */
+    public function getIdUser()
+    {
+        return $this->id_user;
+    }
+
+    /**
+     * @param int $id_user
+     */
+    public function setIdUser($id_user)
+    {
+        $this->id_user = $id_user;
+    }
+
+    /**
      * @return int
      */
     public function getEtat()

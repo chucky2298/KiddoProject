@@ -112,14 +112,15 @@ class __TwigTemplate_016fcf14a1326a9cf143334e1205996f4d8bf3d3ce98c7723189a92572c
                 // line 33
                 echo "
                 <div class=\"card-footer price-footer\">
+                    <input type=\"textarea\">
                     <a class=\"btn btn-info mt-2 mb-2\" type=\"submit\" href=\"";
-                // line 35
+                // line 36
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("reclamation_update", ["id" => $this->getAttribute($context["reclamation"], "id", [])]), "html", null, true);
                 echo "\">Marquer Traité</a>
                 </div>
                 ";
             }
-            // line 38
+            // line 39
             echo "
             </div></div></div>
 
@@ -128,7 +129,7 @@ class __TwigTemplate_016fcf14a1326a9cf143334e1205996f4d8bf3d3ce98c7723189a92572c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reclamation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 43
         echo "</div>
 ";
         
@@ -151,7 +152,7 @@ class __TwigTemplate_016fcf14a1326a9cf143334e1205996f4d8bf3d3ce98c7723189a92572c
 
     public function getDebugInfo()
     {
-        return array (  132 => 42,  123 => 38,  117 => 35,  113 => 33,  111 => 32,  106 => 30,  99 => 26,  92 => 22,  86 => 18,  82 => 16,  78 => 14,  76 => 13,  73 => 12,  69 => 11,  65 => 9,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  133 => 43,  124 => 39,  118 => 36,  113 => 33,  111 => 32,  106 => 30,  99 => 26,  92 => 22,  86 => 18,  82 => 16,  78 => 14,  76 => 13,  73 => 12,  69 => 11,  65 => 9,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -198,6 +199,7 @@ class __TwigTemplate_016fcf14a1326a9cf143334e1205996f4d8bf3d3ce98c7723189a92572c
                 {% if reclamation.etat ==0 %}
 
                 <div class=\"card-footer price-footer\">
+                    <input type=\"textarea\">
                     <a class=\"btn btn-info mt-2 mb-2\" type=\"submit\" href=\"{{ path('reclamation_update', { 'id':reclamation.id }) }}\">Marquer Traité</a>
                 </div>
                 {% endif %}
