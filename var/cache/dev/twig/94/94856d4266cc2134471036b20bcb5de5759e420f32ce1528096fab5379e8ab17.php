@@ -96,11 +96,11 @@ class __TwigTemplate_5ae29d4ea1c390126aeec40cad8c9f004bcbbfd22541913d472f0439ae4
 ";
         // line 29
         $this->displayBlock('header', $context, $blocks);
-        // line 80
+        // line 87
         $this->displayBlock('content', $context, $blocks);
-        // line 82
+        // line 89
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 114
+        // line 121
         echo "</body>
 </html>
 ";
@@ -200,30 +200,34 @@ class __TwigTemplate_5ae29d4ea1c390126aeec40cad8c9f004bcbbfd22541913d472f0439ae4
 
             <ul class=\"side-menu\">
                 <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"";
-        // line 67
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficher_event");
-        echo "\"><span>Gerer parents</span></a>                </li>
+                    <a class=\"slide-item\"  href=\"#\"><span>Gerer parents</span></a>                </li>
                 <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"";
-        // line 69
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficher_event");
-        echo "\"><span>Gerer enfants</span></a>                </li>
+                    <a class=\"slide-item\"  href=\"#\"><span>Gerer enfants</span></a>                </li>
                 <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"";
-        // line 71
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficher_event");
-        echo "\"><span>Gerer evenements</span></a>                </li>
-                <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"";
+                    <a class=\"side-menu__item\" data-toggle=\"slide\" href=\"#\"><i class=\"side-menu__icon fa fa-smile-o\"></i><span class=\"side-menu__label\">Gerer events</span><i class=\"angle fa fa-angle-right\"></i></a>
+                    <ul class=\"slide-menu\">
+                        <li><a href=\"";
         // line 73
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficher_event");
-        echo "\"><span>Gerer actualités</span></a>                </li>
-                <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"";
+        echo "\" class=\"slide-item\"> Liste events</a></li>
+                        <li><a href=\"";
+        // line 74
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajouter_event");
+        echo "\" class=\"slide-item\"> Ajouter event</a></li>
+                        <li><a href=\"";
         // line 75
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficher_event");
-        echo "\"><span>Gerer questions</span></a>                </li>
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("afficher_category");
+        echo "\" class=\"slide-item\"> Liste categories</a></li>
+                        <li><a href=\"";
+        // line 76
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajouter_category");
+        echo "\" class=\"slide-item\"> Ajouter categorie</a></li>
+                    </ul>
+                </li>
+                <li class=\"slide\">
+                    <a class=\"slide-item\"  href=\"#\"><span>Gerer actualités</span></a>                </li>
+                <li class=\"slide\">
+                    <a class=\"slide-item\"  href=\"#\"><span>Gerer questions</span></a>                </li>
             </ul>
         </aside>
         <!--aside closed-->
@@ -236,7 +240,7 @@ class __TwigTemplate_5ae29d4ea1c390126aeec40cad8c9f004bcbbfd22541913d472f0439ae4
 
     }
 
-    // line 80
+    // line 87
     public function block_content($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -253,7 +257,7 @@ class __TwigTemplate_5ae29d4ea1c390126aeec40cad8c9f004bcbbfd22541913d472f0439ae4
 
     }
 
-    // line 82
+    // line 89
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -262,68 +266,68 @@ class __TwigTemplate_5ae29d4ea1c390126aeec40cad8c9f004bcbbfd22541913d472f0439ae4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 83
+        // line 90
         echo "    <!--Jquery.min js-->
     <script src=\"";
-        // line 84
+        // line 91
         echo "back/js/jquery.min.js";
         echo "\"></script>
 
     <!--popper js-->
     <script src=\"";
-        // line 87
+        // line 94
         echo "back/js/popper.js";
         echo "\"></script>
 
     <!--Tooltip js-->
     <script src=\"";
-        // line 90
+        // line 97
         echo "back/js/tooltip.js";
         echo "\"></script>
 
     <!--Bootstrap.min js-->
     <script src=\"";
-        // line 93
+        // line 100
         echo "back/plugins/bootstrap/js/bootstrap.min.js";
         echo "\"></script>
 
     <!-- Jquery star rating-->
     <script src=\"";
-        // line 96
+        // line 103
         echo "back/plugins/rating/jquery.rating-stars.js";
         echo "\"></script>
 
     <!--Jquery.nicescroll.min js-->
     <script src=\"";
-        // line 99
+        // line 106
         echo "back/plugins/nicescroll/jquery.nicescroll.min.js";
         echo "\"></script>
 
     <!--Scroll-up-bar.min js-->
     <script src=\"";
-        // line 102
+        // line 109
         echo "back/plugins/scroll-up-bar/dist/scroll-up-bar.min.js";
         echo "\"></script>
 
     <!--mCustomScrollbar js-->
     <script src=\"";
-        // line 105
+        // line 112
         echo "back/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js";
         echo "\"></script>
 
     <!--Sidemenu js-->
     <script src=\"";
-        // line 108
+        // line 115
         echo "back/plugins/toggle-menu/sidemenu.js";
         echo "\"></script>
 
     <!--Scripts js-->
     <script src=\"";
-        // line 111
+        // line 118
         echo "back/js/scripts.js";
         echo "\"></script>
     <script src=\"";
-        // line 112
+        // line 119
         echo "back/js/jquery.showmore.js";
         echo "\"></script>
 ";
@@ -347,7 +351,7 @@ class __TwigTemplate_5ae29d4ea1c390126aeec40cad8c9f004bcbbfd22541913d472f0439ae4
 
     public function getDebugInfo()
     {
-        return array (  327 => 112,  323 => 111,  317 => 108,  311 => 105,  305 => 102,  299 => 99,  293 => 96,  287 => 93,  281 => 90,  275 => 87,  269 => 84,  266 => 83,  257 => 82,  240 => 80,  225 => 75,  220 => 73,  215 => 71,  210 => 69,  205 => 67,  191 => 56,  165 => 33,  160 => 30,  151 => 29,  134 => 6,  116 => 5,  104 => 114,  102 => 82,  100 => 80,  98 => 29,  92 => 26,  86 => 23,  80 => 20,  74 => 17,  68 => 14,  62 => 11,  56 => 8,  53 => 7,  51 => 6,  47 => 5,  41 => 1,);
+        return array (  331 => 119,  327 => 118,  321 => 115,  315 => 112,  309 => 109,  303 => 106,  297 => 103,  291 => 100,  285 => 97,  279 => 94,  273 => 91,  270 => 90,  261 => 89,  244 => 87,  223 => 76,  219 => 75,  215 => 74,  211 => 73,  191 => 56,  165 => 33,  160 => 30,  151 => 29,  134 => 6,  116 => 5,  104 => 121,  102 => 89,  100 => 87,  98 => 29,  92 => 26,  86 => 23,  80 => 20,  74 => 17,  68 => 14,  62 => 11,  56 => 8,  53 => 7,  51 => 6,  47 => 5,  41 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -426,15 +430,22 @@ class __TwigTemplate_5ae29d4ea1c390126aeec40cad8c9f004bcbbfd22541913d472f0439ae4
 
             <ul class=\"side-menu\">
                 <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"{{ path('afficher_event') }}\"><span>Gerer parents</span></a>                </li>
+                    <a class=\"slide-item\"  href=\"#\"><span>Gerer parents</span></a>                </li>
                 <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"{{ path('afficher_event') }}\"><span>Gerer enfants</span></a>                </li>
+                    <a class=\"slide-item\"  href=\"#\"><span>Gerer enfants</span></a>                </li>
                 <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"{{ path('afficher_event') }}\"><span>Gerer evenements</span></a>                </li>
+                    <a class=\"side-menu__item\" data-toggle=\"slide\" href=\"#\"><i class=\"side-menu__icon fa fa-smile-o\"></i><span class=\"side-menu__label\">Gerer events</span><i class=\"angle fa fa-angle-right\"></i></a>
+                    <ul class=\"slide-menu\">
+                        <li><a href=\"{{ path('afficher_event') }}\" class=\"slide-item\"> Liste events</a></li>
+                        <li><a href=\"{{ path('ajouter_event') }}\" class=\"slide-item\"> Ajouter event</a></li>
+                        <li><a href=\"{{ path('afficher_category') }}\" class=\"slide-item\"> Liste categories</a></li>
+                        <li><a href=\"{{ path('ajouter_category') }}\" class=\"slide-item\"> Ajouter categorie</a></li>
+                    </ul>
+                </li>
                 <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"{{ path('afficher_event') }}\"><span>Gerer actualités</span></a>                </li>
+                    <a class=\"slide-item\"  href=\"#\"><span>Gerer actualités</span></a>                </li>
                 <li class=\"slide\">
-                    <a class=\"slide-item\"  href=\"{{ path('afficher_event') }}\"><span>Gerer questions</span></a>                </li>
+                    <a class=\"slide-item\"  href=\"#\"><span>Gerer questions</span></a>                </li>
             </ul>
         </aside>
         <!--aside closed-->

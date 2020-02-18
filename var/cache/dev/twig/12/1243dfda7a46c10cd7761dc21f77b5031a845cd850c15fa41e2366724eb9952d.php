@@ -63,7 +63,7 @@ class __TwigTemplate_96b42648e5324aa05e6c4eec0bbbc097813076a108d12daaa4e05693e00
     ";
         // line 8
         echo "
-    <!--row open-->
+
     <div class=\"row\">
     <div class=\"col-lg-12 col-xl-6 col-md-12 col-sm-12\">
         <div class=\"card\">
@@ -113,7 +113,7 @@ class __TwigTemplate_96b42648e5324aa05e6c4eec0bbbc097813076a108d12daaa4e05693e00
                     <div class=\"col-md-9\">
                         ";
         // line 45
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lienPhoto", []), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "brochure", []), 'widget');
         echo "
                     </div>
                 </div>
@@ -170,7 +170,7 @@ class __TwigTemplate_96b42648e5324aa05e6c4eec0bbbc097813076a108d12daaa4e05693e00
     <button type=\"submit\" value=\"Create\">Create</button>
     #}
 
-    <!--row open-->
+
     <div class=\"row\">
     <div class=\"col-lg-12 col-xl-6 col-md-12 col-sm-12\">
         <div class=\"card\">
@@ -206,7 +206,7 @@ class __TwigTemplate_96b42648e5324aa05e6c4eec0bbbc097813076a108d12daaa4e05693e00
                 <div class=\"form-group row\">
                     <label class=\"col-md-3 col-form-label\">Lien photo </label>
                     <div class=\"col-md-9\">
-                        {{ form_widget(form.lienPhoto) }}
+                        {{ form_widget(form.brochure) }}
                     </div>
                 </div>
                 <button type=\"submit\" value=\"Create\" class=\"btn btn-primary mt-1 mb-0\" >Modifier</button>

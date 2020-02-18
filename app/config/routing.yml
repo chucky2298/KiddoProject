@@ -13,3 +13,6 @@ app:
 reclamation:
     resource: "@ReclamationBundle/Resources/config/routing.yml"
     prefix:   /
+enfant:
+    resource: "@GererEnfantBundle/Resources/config/routing.yml"
+    prefix:   /

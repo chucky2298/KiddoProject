@@ -123,14 +123,66 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         not_events_homepage:
 
         if (0 === strpos($pathinfo, '/a')) {
-            // ajouter_event
-            if ('/ajouterEvent' === $pathinfo) {
-                return array (  '_controller' => 'EventsBundle\\Controller\\EventsController::ajoutEventAction',  '_route' => 'ajouter_event',);
+            if (0 === strpos($pathinfo, '/ajout')) {
+                if (0 === strpos($pathinfo, '/ajouter')) {
+                    // ajouter_event
+                    if ('/ajouterEvent' === $pathinfo) {
+                        return array (  '_controller' => 'EventsBundle\\Controller\\EventsController::ajoutEventAction',  '_route' => 'ajouter_event',);
+                    }
+
+                    // ajouter_category
+                    if ('/ajouterCategory' === $pathinfo) {
+                        return array (  '_controller' => 'EventsBundle\\Controller\\CategoryController::ajouterCategoryAction',  '_route' => 'ajouter_category',);
+                    }
+
+                    // ajouter_participation
+                    if ('/ajouterParticipation' === $pathinfo) {
+                        return array (  '_controller' => 'EventsBundle:Pass:ajouterParticipations',  '_route' => 'ajouter_participation',);
+                    }
+
+                }
+
+                // ajoutEnfant
+                if ('/ajoutEnfant' === $pathinfo) {
+                    return array (  '_controller' => 'GererEnfantBundle\\Controller\\EnfantController::ajoutEnfantAction',  '_route' => 'ajoutEnfant',);
+                }
+
+                // ajoutNote
+                if ('/ajoutNote' === $pathinfo) {
+                    return array (  '_controller' => 'GererEnfantBundle\\Controller\\NoteController::ajoutNoteAction',  '_route' => 'ajoutNote',);
+                }
+
             }
 
-            // afficher_event
-            if ('/afficherEvent' === $pathinfo) {
-                return array (  '_controller' => 'EventsBundle\\Controller\\EventsController::afficherEventAction',  '_route' => 'afficher_event',);
+            elseif (0 === strpos($pathinfo, '/affiche')) {
+                if (0 === strpos($pathinfo, '/afficher')) {
+                    // afficher_event
+                    if ('/afficherEvent' === $pathinfo) {
+                        return array (  '_controller' => 'EventsBundle\\Controller\\EventsController::afficherEventAction',  '_route' => 'afficher_event',);
+                    }
+
+                    // afficher_category
+                    if ('/afficherCategory' === $pathinfo) {
+                        return array (  '_controller' => 'EventsBundle\\Controller\\CategoryController::afficherCategoryAction',  '_route' => 'afficher_category',);
+                    }
+
+                    // afficher_participation
+                    if ('/afficherParticipation' === $pathinfo) {
+                        return array (  '_controller' => 'EventsBundle:Pass:afficherParticipations',  '_route' => 'afficher_participation',);
+                    }
+
+                }
+
+                // afficheEnfant
+                if ('/afficheEnfant' === $pathinfo) {
+                    return array (  '_controller' => 'GererEnfantBundle\\Controller\\EnfantController::afficheEnfantAction',  '_route' => 'afficheEnfant',);
+                }
+
+                // afficheNote
+                if ('/afficheNote' === $pathinfo) {
+                    return array (  '_controller' => 'GererEnfantBundle\\Controller\\NoteController::afficheNoteAction',  '_route' => 'afficheNote',);
+                }
+
             }
 
             // reclamation_ajout
@@ -140,9 +192,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // supprimer_event
-        if (0 === strpos($pathinfo, '/supprimerEvent') && preg_match('#^/supprimerEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimer_event']), array (  '_controller' => 'EventsBundle\\Controller\\EventsController::supprimerEventAction',));
+        elseif (0 === strpos($pathinfo, '/supprimer')) {
+            // supprimer_event
+            if (0 === strpos($pathinfo, '/supprimerEvent') && preg_match('#^/supprimerEvent/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimer_event']), array (  '_controller' => 'EventsBundle\\Controller\\EventsController::supprimerEventAction',));
+            }
+
+            // supprimer_category
+            if (0 === strpos($pathinfo, '/supprimerCategory') && preg_match('#^/supprimerCategory/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimer_category']), array (  '_controller' => 'EventsBundle\\Controller\\CategoryController::supprimerCategoryAction',));
+            }
+
+            // supprimer_participation
+            if (0 === strpos($pathinfo, '/supprimerParticipation') && preg_match('#^/supprimerParticipation/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'supprimer_participation']), array (  '_controller' => 'EventsBundle:Pass:supprimerParticipations',));
+            }
+
         }
 
         // reclamation_affiche
@@ -195,15 +260,56 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_reclamation_homepage:
 
-        // reclamation_delete
-        if (0 === strpos($pathinfo, '/deleteReclamation') && preg_match('#^/deleteReclamation/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, ['_route' => 'reclamation_delete']), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::deleteAction',));
+        if (0 === strpos($pathinfo, '/delete')) {
+            // reclamation_delete
+            if (0 === strpos($pathinfo, '/deleteReclamation') && preg_match('#^/deleteReclamation/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'reclamation_delete']), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::deleteAction',));
+            }
+
+            // deleteEnfant
+            if (0 === strpos($pathinfo, '/deleteEnfant') && preg_match('#^/deleteEnfant/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'deleteEnfant']), array (  '_controller' => 'GererEnfantBundle\\Controller\\EnfantController::deleteEnfantAction',));
+            }
+
+            // deleteNote
+            if (0 === strpos($pathinfo, '/deleteNote') && preg_match('#^/deleteNote/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'deleteNote']), array (  '_controller' => 'GererEnfantBundle\\Controller\\NoteController::deleteNoteAction',));
+            }
+
         }
 
-        // reclamation_update
-        if (0 === strpos($pathinfo, '/updateReclamation') && preg_match('#^/updateReclamation/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, ['_route' => 'reclamation_update']), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::updateAction',));
+        elseif (0 === strpos($pathinfo, '/update')) {
+            // reclamation_update
+            if (0 === strpos($pathinfo, '/updateReclamation') && preg_match('#^/updateReclamation/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'reclamation_update']), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::updateAction',));
+            }
+
+            // updateEnfant
+            if (0 === strpos($pathinfo, '/updateEnfant') && preg_match('#^/updateEnfant/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'updateEnfant']), array (  '_controller' => 'GererEnfantBundle\\Controller\\EnfantController::updateEnfantAction',));
+            }
+
+            // updateNote
+            if (0 === strpos($pathinfo, '/updateNote') && preg_match('#^/updateNote/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'updateNote']), array (  '_controller' => 'GererEnfantBundle\\Controller\\NoteController::updateNoteAction',));
+            }
+
         }
+
+        // gerer_enfant_homepage
+        if ('' === $trimmedPathinfo) {
+            $ret = array (  '_controller' => 'GererEnfantBundle\\Controller\\DefaultController::indexAction',  '_route' => 'gerer_enfant_homepage',);
+            if ('/' === substr($pathinfo, -1)) {
+                // no-op
+            } elseif ('GET' !== $canonicalMethod) {
+                goto not_gerer_enfant_homepage;
+            } else {
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'gerer_enfant_homepage'));
+            }
+
+            return $ret;
+        }
+        not_gerer_enfant_homepage:
 
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();

@@ -64,7 +64,7 @@ class __TwigTemplate_7d211db6010526407416f67edcedc5a36702c6d3089b11a1761a6d99a58
         echo "
 <!--row open-->
 <div class=\"row\">
-        <div class=\"col-lg-12 col-xl-6 col-md-12 col-sm-12\">
+    <div class=\"col-lg-12 col-xl-6 col-md-12 col-sm-12\">
                 <div class=\"card\">
                         <div class=\"card-header\">
                                 <h4>Ajouter</h4>
@@ -112,10 +112,19 @@ class __TwigTemplate_7d211db6010526407416f67edcedc5a36702c6d3089b11a1761a6d99a58
                                                 <div class=\"col-md-9\">
                                                     ";
         // line 45
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "lienPhoto", []), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "brochure", []), 'widget');
         echo "
                                                 </div>
                                         </div>
+                            <div class=\"form-group row\">
+                                <label class=\"col-md-3 col-form-label\">Category </label>
+                                <div class=\"col-md-9\">
+                                    ";
+        // line 51
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "category", []), 'widget');
+        echo "
+                                </div>
+                            </div>
                                         <button type=\"submit\" value=\"Create\" class=\"btn btn-primary mt-1 mb-0\" >Ajouter</button>
 
 
@@ -124,7 +133,7 @@ class __TwigTemplate_7d211db6010526407416f67edcedc5a36702c6d3089b11a1761a6d99a58
         </div>
         <!--row closed-->
 ";
-        // line 55
+        // line 61
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
 ";
@@ -148,7 +157,7 @@ class __TwigTemplate_7d211db6010526407416f67edcedc5a36702c6d3089b11a1761a6d99a58
 
     public function getDebugInfo()
     {
-        return array (  128 => 55,  115 => 45,  106 => 39,  97 => 33,  88 => 27,  79 => 21,  64 => 8,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  137 => 61,  124 => 51,  115 => 45,  106 => 39,  97 => 33,  88 => 27,  79 => 21,  64 => 8,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -171,7 +180,7 @@ class __TwigTemplate_7d211db6010526407416f67edcedc5a36702c6d3089b11a1761a6d99a58
 
 <!--row open-->
 <div class=\"row\">
-        <div class=\"col-lg-12 col-xl-6 col-md-12 col-sm-12\">
+    <div class=\"col-lg-12 col-xl-6 col-md-12 col-sm-12\">
                 <div class=\"card\">
                         <div class=\"card-header\">
                                 <h4>Ajouter</h4>
@@ -205,9 +214,15 @@ class __TwigTemplate_7d211db6010526407416f67edcedc5a36702c6d3089b11a1761a6d99a58
                                         <div class=\"form-group row\">
                                                 <label class=\"col-md-3 col-form-label\">Lien photo </label>
                                                 <div class=\"col-md-9\">
-                                                    {{ form_widget(form.lienPhoto) }}
+                                                    {{ form_widget(form.brochure) }}
                                                 </div>
                                         </div>
+                            <div class=\"form-group row\">
+                                <label class=\"col-md-3 col-form-label\">Category </label>
+                                <div class=\"col-md-9\">
+                                    {{ form_widget(form.category) }}
+                                </div>
+                            </div>
                                         <button type=\"submit\" value=\"Create\" class=\"btn btn-primary mt-1 mb-0\" >Ajouter</button>
 
 

@@ -62,7 +62,7 @@ class __TwigTemplate_33d9d510acb5a45f3ed508e1925c1bd14e804566c3b43fe784a3255a0df
         echo "\"></script>
 ";
         // line 9
-        echo "    <div class=\"section-body card-columns gallery\">
+        echo "    <div class=\"row\">
 ";
         // line 10
         $context['_parent'] = $context;
@@ -71,50 +71,46 @@ class __TwigTemplate_33d9d510acb5a45f3ed508e1925c1bd14e804566c3b43fe784a3255a0df
             // line 11
             echo "    ";
             // line 17
-            echo "    <div class=\"row\">
-        <div class=\"col-md-12\">
-            <div class=\"card pricing-table-7\">
-                <div class=\"card-header price-header\">
-                    <h3 class=\"title\">";
+            echo "    <div class=\"col-xl-4 col-lg-12 col-md-12\">
+        <div class=\"card\">
+            <img class=\"card-img-top w-100\" src=\"";
+            // line 19
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("back/" . $this->getAttribute($context["events"], "brochure", []))), "html", null, true);
+            echo "\" alt=\"\">
+            <div class=\"card-body\">
+                <h4 class=\"card-title\">";
             // line 21
             echo twig_escape_filter($this->env, $this->getAttribute($context["events"], "nom", []), "html", null, true);
-            echo "</h3>
-                </div>
-                <div class=\"card-body price-body\">
-                    <ul>
-                        <li><b>Adresse: </b>";
-            // line 25
+            echo "</h4>
+                <p class=\"card-text\">Adresse: ";
+            // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($context["events"], "adresse", []), "html", null, true);
-            echo "</li>
-                        <li><b>Quantite: </b>";
-            // line 26
+            echo "</p>
+                <p class=\"card-text\">Date: ";
+            // line 23
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["events"], "date", []), "m/d/Y"), "html", null, true);
+            echo "</p>
+                <p class=\"card-text\">";
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["events"], "quantite", []), "html", null, true);
-            echo "</li>
-                    </ul>
-                </div>
-
-                    <div class=\"card-footer price-footer\">
-                        <a class=\"btn btn-warning mt-2 mb-2\" type=\"submit\" href=\"";
-            // line 31
+            echo " passes</p>
+                <a class=\"btn btn-primary\" href=\"";
+            // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("supprimer_event", ["id" => $this->getAttribute($context["events"], "id", [])]), "html", null, true);
             echo "\">Supprimer</a>
-                    </div>
-
-                    <div class=\"card-footer price-footer\">
-                        <a class=\"btn btn-info mt-2 mb-2\" type=\"submit\" href=\"";
-            // line 35
+                <a class=\"btn btn-primary\" href=\"";
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("modifier_event", ["id" => $this->getAttribute($context["events"], "id", [])]), "html", null, true);
             echo "\">Modifier</a>
-                    </div>
             </div>
         </div>
     </div>
-";
+    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['events'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 54
         echo "    </div>
 ";
         
@@ -137,7 +133,7 @@ class __TwigTemplate_33d9d510acb5a45f3ed508e1925c1bd14e804566c3b43fe784a3255a0df
 
     public function getDebugInfo()
     {
-        return array (  118 => 41,  106 => 35,  99 => 31,  91 => 26,  87 => 25,  80 => 21,  74 => 17,  72 => 11,  68 => 10,  65 => 9,  60 => 3,  51 => 2,  29 => 1,);
+        return array (  114 => 54,  103 => 26,  99 => 25,  95 => 24,  91 => 23,  87 => 22,  83 => 21,  78 => 19,  74 => 17,  72 => 11,  68 => 10,  65 => 9,  60 => 3,  51 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -158,7 +154,7 @@ class __TwigTemplate_33d9d510acb5a45f3ed508e1925c1bd14e804566c3b43fe784a3255a0df
         \$(\"a\").hover(function(){ \$(\"a\").css(\"color\",\"red\")});
     });
 </script>#}
-    <div class=\"section-body card-columns gallery\">
+    <div class=\"row\">
 {% for events in events %}
     {#<p>{{ events.nom }}</p>
     <ul>
@@ -166,7 +162,20 @@ class __TwigTemplate_33d9d510acb5a45f3ed508e1925c1bd14e804566c3b43fe784a3255a0df
         <li>adresse : {{ events.adresse }}</li>
     </ul>
     <a href=\"{{ path('supprimer_event', { 'id':events.id }) }}\"><b>supprimer</b></a>#}
-    <div class=\"row\">
+    <div class=\"col-xl-4 col-lg-12 col-md-12\">
+        <div class=\"card\">
+            <img class=\"card-img-top w-100\" src=\"{{ asset('back/' ~ events.brochure) }}\" alt=\"\">
+            <div class=\"card-body\">
+                <h4 class=\"card-title\">{{ events.nom }}</h4>
+                <p class=\"card-text\">Adresse: {{ events.adresse }}</p>
+                <p class=\"card-text\">Date: {{ events.date|date(\"m/d/Y\") }}</p>
+                <p class=\"card-text\">{{ events.quantite }} passes</p>
+                <a class=\"btn btn-primary\" href=\"{{ path('supprimer_event', { 'id':events.id }) }}\">Supprimer</a>
+                <a class=\"btn btn-primary\" href=\"{{ path('modifier_event', { 'id':events.id }) }}\">Modifier</a>
+            </div>
+        </div>
+    </div>
+    {#<div class=\"row\">
         <div class=\"col-md-12\">
             <div class=\"card pricing-table-7\">
                 <div class=\"card-header price-header\">
@@ -188,7 +197,7 @@ class __TwigTemplate_33d9d510acb5a45f3ed508e1925c1bd14e804566c3b43fe784a3255a0df
                     </div>
             </div>
         </div>
-    </div>
+    </div>#}
 {% endfor %}
     </div>
 {% endblock %}", "@Events/Events/affiche.html.twig", "C:\\wamp64\\www\\PIDEV\\src\\EventsBundle\\Resources\\views\\Events\\affiche.html.twig");

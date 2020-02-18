@@ -20,6 +20,10 @@ class ComposerStaticInitc231bbf6a0ac589b5a9d1245a98ae8ca
     );
 
     public static $prefixLengthsPsr4 = array (
+        'V' => 
+        array (
+            'Vich\\UploaderBundle\\' => 20,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -66,6 +70,7 @@ class ComposerStaticInitc231bbf6a0ac589b5a9d1245a98ae8ca
         'F' => 
         array (
             'Fig\\Link\\' => 9,
+            'FOS\\UserBundle\\' => 15,
         ),
         'D' => 
         array (
@@ -84,6 +89,10 @@ class ComposerStaticInitc231bbf6a0ac589b5a9d1245a98ae8ca
     );
 
     public static $prefixDirsPsr4 = array (
+        'Vich\\UploaderBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vich/uploader-bundle',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -200,6 +209,10 @@ class ComposerStaticInitc231bbf6a0ac589b5a9d1245a98ae8ca
         array (
             0 => __DIR__ . '/..' . '/fig/link-util/src',
         ),
+        'FOS\\UserBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -244,6 +257,13 @@ class ComposerStaticInitc231bbf6a0ac589b5a9d1245a98ae8ca
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'M' => 
+        array (
+            'Metadata\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/jms/metadata/src',
             ),
         ),
         'D' => 
