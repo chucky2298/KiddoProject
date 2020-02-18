@@ -13,11 +13,17 @@ class ReclamationController extends Controller
 {
 
     public function AjoutAction(Request $request)
-    {
+    {   $usr= $this->get('security.token_storage')->getToken()->getUser();
+        $user_id = $usr->getId();
+
+
+
         $reclamation=new Reclamation();
         $form=$this->createForm(ReclamationType::class,$reclamation);
         $form->handleRequest($request);
         $reclamation->setEtat(0);
+        $reclamation->setIdUser($user_id);
+
         if($form->isSubmitted()) {
             $m=$this->getDoctrine()->getManager();
             $m->persist($reclamation);
@@ -35,7 +41,6 @@ class ReclamationController extends Controller
     {
         $entityManager = $this->getDoctrine()->getManager();
         $product = $entityManager->getRepository(Reclamation::class)->find($id);
-
         $product->setEtat(1);
 
         $entityManager->flush();

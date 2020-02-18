@@ -21,6 +21,11 @@ class AppKernel extends Kernel
             new EventsBundle\EventsBundle(),
             new GererEnfantBundle\GererEnfantBundle(),
             new ReclamationBundle\ReclamationBundle(),
+<<<<<<< HEAD
+=======
+            new FOS\UserBundle\FOSUserBundle(),
+
+>>>>>>> 10d837b11ef88388e3929edaa871f347e6438af7
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

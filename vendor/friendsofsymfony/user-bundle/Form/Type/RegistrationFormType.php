@@ -12,6 +12,10 @@
 namespace FOS\UserBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+>>>>>>> 10d837b11ef88388e3929edaa871f347e6438af7
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -39,6 +43,11 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+<<<<<<< HEAD
+=======
+            ->add('nom')
+            ->add('prenom')
+>>>>>>> 10d837b11ef88388e3929edaa871f347e6438af7
             ->add('email', EmailType::class, array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle'))
             ->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle'))
             ->add('plainPassword', RepeatedType::class, array(
@@ -53,6 +62,13 @@ class RegistrationFormType extends AbstractType
                 'second_options' => array('label' => 'form.password_confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
+<<<<<<< HEAD
+=======
+            ->add('roles',ChoiceType::class,array('label' =>'type',
+                'choices' => array('PARENT' => 'ROLE_PARENT','CLIENT' =>'ROLE_CLIENT'    ),
+                'required' => true,'multiple' => true ,
+                ) )
+>>>>>>> 10d837b11ef88388e3929edaa871f347e6438af7
         ;
     }
 

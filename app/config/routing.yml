@@ -13,6 +13,12 @@ app:
 reclamation:
     resource: "@ReclamationBundle/Resources/config/routing.yml"
     prefix:   /
+<<<<<<< HEAD
 enfant:
     resource: "@GererEnfantBundle/Resources/config/routing.yml"
     prefix:   /
+=======
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+>>>>>>> 10d837b11ef88388e3929edaa871f347e6438af7

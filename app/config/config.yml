@@ -8,12 +8,18 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+<<<<<<< HEAD
     locale: en
     brochures_directory: '%kernel.project_dir%/web/back'
+=======
+    locale: fr
+>>>>>>> 10d837b11ef88388e3929edaa871f347e6438af7
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
+    templating:
+        engines: ['twig']
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -72,3 +78,12 @@ swiftmailer:
 sensio_framework_extra:
    router:
         annotations: false
+
+#Fosuser configuration
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "atef.hafdhi@esprit.tn"
+        sender_name: "atef"
